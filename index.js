@@ -66,7 +66,7 @@ client.on('message', message => {
     }
 
     //terusan dari Layanan Administrasi Desa
-    if (state[message.from] === "menu1" && message.body === '11') {
+    if (state[message.from] === "menu1" && message.body === '1.1') {
     message.reply(
         "📌 *Persyaratan Surat Domisili:*\n\n" +
         "• KK atau KTP Pemohon\n" +
@@ -77,7 +77,7 @@ client.on('message', message => {
     return;
     }
 
-    if (state[message.from] === "menu1" && message.body === '12') {
+    if (state[message.from] === "menu1" && message.body === '1.2') {
     message.reply(
         "📌 *Persyaratan Surat Keterangan Usaha:*\n\n" +
         "• KK atau KTP Pemohon\n" +
@@ -89,7 +89,7 @@ client.on('message', message => {
     return;
     }
 
-    if (state[message.from] === "menu1" && message.body === '13') {
+    if (state[message.from] === "menu1" && message.body === '1.3') {
     message.reply(
         "📌 *Persyaratan Surat Kematian:*\n\n" +
         "• Surat Layu-Layu atau Keterangan Tanggal Kematian\n" +
@@ -101,7 +101,7 @@ client.on('message', message => {
     return;
     }
 
-    if (state[message.from] === "menu1" && message.body === '14') {
+    if (state[message.from] === "menu1" && message.body === '1.4') {
     message.reply(
         "📌 *Persyaratan Surat Pengantar Nikah:*\n\n" +
         "• Menghubungi Bu Dwi (0881-3980-121)\n\n" +
@@ -111,7 +111,7 @@ client.on('message', message => {
     return;
     }
 
-    if (state[message.from] === "menu1" && message.body === '15') {
+    if (state[message.from] === "menu1" && message.body === '1.5') {
     message.reply(
         "📌 *Persyaratan Surat Beda Nama:*\n\n" +
         "• Dokumen yang Namanya Berbeda yang Dilaporkan\n\n" +
@@ -121,7 +121,7 @@ client.on('message', message => {
     return;
     }
 
-    if (state[message.from] === "menu1" && message.body === '16') {
+    if (state[message.from] === "menu1" && message.body === '1.6') {
     message.reply(
         "📌 *Persyaratan Pembuatan atau Perubahan KK:*\n\n" +
         "• Surat Layu-Layu atau Keterangan Tanggal Kematian\n" +
@@ -133,7 +133,55 @@ client.on('message', message => {
     return;
     }
 
-    if (state[message.from] === "menu1" && message.body === '17') {
+    if (state[message.from] === "menu1" && message.body === '1.7') {
+    message.reply(
+        "📌 *Persyaratan Pengajuan KTP-EL:*\n\n" +
+        "• Surat Layu-Layu atau Keterangan Tanggal Kematian\n" +
+        "• KK yang Meninggal\n" +
+        "• KTP Pelapor\n\n" +
+        "👉 Ketik *menu* untuk kembali ke menu utama."
+    );
+    state[message.from] = null;
+    return;
+    }
+
+    if (state[message.from] === "menu1" && message.body === '1.8') {
+    message.reply(
+        "📌 *Persyaratan Pengajuan KIA:*\n\n" +
+        "• Surat Layu-Layu atau Keterangan Tanggal Kematian\n" +
+        "• KK yang Meninggal\n" +
+        "• KTP Pelapor\n\n" +
+        "👉 Ketik *menu* untuk kembali ke menu utama."
+    );
+    state[message.from] = null;
+    return;
+    }
+
+    if (state[message.from] === "menu1" && message.body === '1.9') {
+    message.reply(
+        "📌 *Persyaratan Pengajuan Akta Kelahiran:*\n\n" +
+        "• Surat Layu-Layu atau Keterangan Tanggal Kematian\n" +
+        "• KK yang Meninggal\n" +
+        "• KTP Pelapor\n\n" +
+        "👉 Ketik *menu* untuk kembali ke menu utama."
+    );
+    state[message.from] = null;
+    return;
+    }
+
+    if (state[message.from] === "menu1" && message.body === '1.10') {
+    message.reply(
+        "📌 *Persyaratan Pengajuan Akta Kematian:*\n\n" +
+        "• Surat Layu-Layu atau Keterangan Tanggal Kematian\n" +
+        "• KK yang Meninggal\n" +
+        "• KTP Pelapor\n\n" +
+        "👉 Ketik *menu* untuk kembali ke menu utama."
+    );
+    state[message.from] = null;
+    return;
+    }
+
+    if (state[message.from] === "menu1" && message.body === '1.11') {
     message.reply(
         "📌 *Persyaratan Pengajuan Perpindahan Antar Kabupaten atau Provinsi:*\n\n" +
         "• Surat Layu-Layu atau Keterangan Tanggal Kematian\n" +
@@ -145,7 +193,7 @@ client.on('message', message => {
     return;
     }
 
-    if (state[message.from] === "menu1" && message.body === '18') {
+    if (state[message.from] === "menu1" && message.body === '1.12') {
     message.reply(
         "📌 *Persyaratan Pengajuan Kedatangan dari Luar Kabupaten Masuk ke Kabupaten Klaten:*\n\n" +
         "• Surat Layu-Layu atau Keterangan Tanggal Kematian\n" +
