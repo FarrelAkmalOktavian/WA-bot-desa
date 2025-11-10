@@ -47,24 +47,31 @@ client.on('message', message => {
             "- Surat Domisili\n" +
             "- Surat Keterangan Usaha\n" +
             "- Surat Kematian\n" +
-            "- Surat Pengantar RT/RW\n\n" +
-            "🕒 Jam Pelayanan: Senin–Kamis (08.00–13.00) Jum'at (08.00-11.00)"
+            "- Surat Beda Nama\n" +
+            "- Surat Pengantar Nikah\n" +
+            "- Pembuatan/Perubahan KK\n" +
+            "- Pengajuan Perpindahan Antar Kabupaten/Provinsi\n" +
+            "- Pengajuan dari Luar Kabupaten Masuk ke Kabupaten Klaten\n" +
+            "🕒 Jam Pelayanan: Senin–Kamis (08.00–13.00), Jum'at (08.00-11.00)\n\n" +
+            "👉 Ketik *menu* untuk kembali ke menu utama."
         );
     }
 
     if (message.body === '2') {
         message.reply(
             "🗓️ *Jadwal Pelayanan Desa Burikan*\n" +
-            "- Administrasi: Senin–Jumat (08.00–13.00) Jum'at (08.00-11.00)\n" +
-            "- Posyandu: Tanggal 5 setiap bulan\n" +
-            "- Kerja Bakti: Minggu pertama setiap bulan"
+            "- Administrasi: Senin–Jumat (08.00–13.00), Jum'at (08.00-11.00)\n" +
+            "- Posyandu: Rutin setiap bulan dengan tanggal berbeda pada setiap dusunnya\n" +
+            "- Kerja Bakti: Minggu pertama setiap bulan\n\n" +
+            "👉 Ketik *menu* untuk kembali ke menu utama."
         );
     }
 
     if (message.body === '3') {
         message.reply(
             "💰 *Informasi Bantuan & Program Sosial*\n\n" +
-            "*belum ada informasi bantuan & program sosial*" 
+            "Dana bantuan BLT tersedia setiap bulan untuk masyarakat miskin ekstrim\n\n" +
+            "👉 Ketik *menu* untuk kembali ke menu utama."
         );
         return;
     }
@@ -78,7 +85,8 @@ client.on('message', message => {
             "Kaur Keuangan: Dwi Nurkhasanah, S.Pi\n" +
             "Kepala Dusun 1: Muhammad Isa\n" +
             "Kepala Dusun 2: Murniningsih, A.Md\n" +
-            "Kepala Dusun 3: Paryono"
+            "Kepala Dusun 3: Paryono\n\n" +
+            "👉 Ketik *menu* untuk kembali ke menu utama."
         );
         return;
     }
@@ -91,7 +99,8 @@ client.on('message', message => {
             "Kaur Keuangan: 0881-3980-121\n" +
             "Kepala Dusun 1: 0856-0102-2821\n" +
             "Kepala Dusun 2: 0816-4246-049\n" +
-            "Kepala Dusun 3: 0881-0242-41498"
+            "Kepala Dusun 3: 0881-0242-41498\n\n" +
+            "👉 Ketik *menu* untuk kembali ke menu utama."
         );
         return;
     }
@@ -134,7 +143,8 @@ client.on('message', message => {
             "🔗 *Website Desa Burikan*\n\n" +
             "Untuk menuju ke website Desa Burikan, silahkan akses melalui tautan dibawah\n" +
             "⬇️⬇️⬇️\n\n" +
-            "https://burikan.cawas.klaten.go.id/"
+            "https://burikan.cawas.klaten.go.id/\n\n" +
+            "👉 Ketik *menu* untuk kembali ke menu utama."
         );
         return;
     }
