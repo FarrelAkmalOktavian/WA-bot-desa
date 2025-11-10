@@ -20,9 +20,11 @@ client.on('ready', () => {
     console.log('✅ WhatsApp Bot Desa Burikan siap digunakan!');
 });
 
+let state = {};
 
 client.on('message', message => {
     if (message.body.toLowerCase() === 'menu') {
+    state[message.from] = "menu1";
     const salam = salamOtomatis();
     message.reply(
         `${salam}! 👋 *Selamat datang di WA Bot Desa Burikan!*\n\n` +
@@ -44,17 +46,111 @@ client.on('message', message => {
         message.reply(
             "📄 *Informasi Layanan Administrasi Desa*\n\n" +
             "Berikut layanan yang tersedia:\n" +
-            "- Surat Domisili\n" +
-            "- Surat Keterangan Usaha\n" +
-            "- Surat Kematian\n" +
-            "- Surat Beda Nama\n" +
-            "- Surat Pengantar Nikah\n" +
-            "- Pembuatan/Perubahan KK\n" +
-            "- Pengajuan Perpindahan Antar Kabupaten/Provinsi\n" +
-            "- Pengajuan dari Luar Kabupaten Masuk ke Kabupaten Klaten\n" +
+            "1️⃣1️⃣ Surat Domisili\n" +
+            "1️⃣2️⃣ Surat Keterangan Usaha\n" +
+            "1️⃣3️⃣ Surat Kematian\n" +
+            "1️⃣4️⃣ Surat Beda Nama\n" +
+            "1️⃣5️⃣ Surat Pengantar Nikah\n" +
+            "1️⃣6️⃣ Pembuatan/Perubahan KK\n" +
+            "1️⃣7️⃣ Pengajuan Perpindahan Antar Kabupaten/Provinsi\n" +
+            "1️⃣8️⃣ Pengajuan dari Luar Kabupaten Masuk ke Kabupaten Klaten\n" +
+            "Ketik angka sesuai pilihan Anda seperti conotoh: *11*\n" +
+            "(Surat Keterangan Lain Bisa Langsung Datang ke Balai Desa.)\n" +
             "🕒 Jam Pelayanan: Senin–Kamis (08.00–13.00), Jum'at (08.00-11.00)\n\n" +
             "👉 Ketik *menu* untuk kembali ke menu utama."
         );
+    }
+
+    //terusan dari Layanan Administrasi Desa
+    if (state[message.from] === "menu1" && message.body === '11') {
+    message.reply(
+        "📌 *Persyaratan Surat Domisili:*\n\n" +
+        "• KK atau KTP Pemohon\n" +
+        "• Mengisi formulir di Balai Desa\n\n" +
+        "👉 Ketik *menu* untuk kembali ke menu utama."
+    );
+    state[message.from] = null;
+    return;
+    }
+
+    if (state[message.from] === "menu1" && message.body === '12') {
+    message.reply(
+        "📌 *Persyaratan Surat Keterangan Usaha:*\n\n" +
+        "• KK atau KTP Pemohon\n" +
+        "• Menyampaikan Jenis Usaha, Lokasi Usaha, Bank yang Dituju, dan Lama Usaha\n" +
+        "• Mengisi formulir di Balai Desa\n\n" +
+        "👉 Ketik *menu* untuk kembali ke menu utama."
+    );
+    state[message.from] = null;
+    return;
+    }
+
+    if (state[message.from] === "menu1" && message.body === '13') {
+    message.reply(
+        "📌 *Persyaratan Surat Kematian:*\n\n" +
+        "• Surat Layu-Layu atau Keterangan Tanggal Kematian\n" +
+        "• KK yang Meninggal\n" +
+        "• KTP Pelapor\n\n" +
+        "👉 Ketik *menu* untuk kembali ke menu utama."
+    );
+    state[message.from] = null;
+    return;
+    }
+
+    if (state[message.from] === "menu1" && message.body === '14') {
+    message.reply(
+        "📌 *Persyaratan Surat Pengantar Nikah:*\n\n" +
+        "• Menghubungi Bu Dwi (0881-3980-121)\n\n" +
+        "👉 Ketik *menu* untuk kembali ke menu utama."
+    );
+    state[message.from] = null;
+    return;
+    }
+
+    if (state[message.from] === "menu1" && message.body === '15') {
+    message.reply(
+        "📌 *Persyaratan Surat Beda Nama:*\n\n" +
+        "• Dokumen yang Namanya Berbeda yang Dilaporkan\n\n" +
+        "👉 Ketik *menu* untuk kembali ke menu utama."
+    );
+    state[message.from] = null;
+    return;
+    }
+
+    if (state[message.from] === "menu1" && message.body === '16') {
+    message.reply(
+        "📌 *Persyaratan Pembuatan atau Perubahan KK:*\n\n" +
+        "• Surat Layu-Layu atau Keterangan Tanggal Kematian\n" +
+        "• KK yang Meninggal\n" +
+        "• KTP Pelapor\n\n" +
+        "👉 Ketik *menu* untuk kembali ke menu utama."
+    );
+    state[message.from] = null;
+    return;
+    }
+
+    if (state[message.from] === "menu1" && message.body === '17') {
+    message.reply(
+        "📌 *Persyaratan Pengajuan Perpindahan Antar Kabupate atau Provinsi:*\n\n" +
+        "• Surat Layu-Layu atau Keterangan Tanggal Kematian\n" +
+        "• KK yang Meninggal\n" +
+        "• KTP Pelapor\n\n" +
+        "👉 Ketik *menu* untuk kembali ke menu utama."
+    );
+    state[message.from] = null;
+    return;
+    }
+
+    if (state[message.from] === "menu1" && message.body === '18') {
+    message.reply(
+        "📌 *Persyaratan Pengajuan dari Luar Kabupaten Masuk ke Kabupaten Klaten:*\n\n" +
+        "• Surat Layu-Layu atau Keterangan Tanggal Kematian\n" +
+        "• KK yang Meninggal\n" +
+        "• KTP Pelapor\n\n" +
+        "👉 Ketik *menu* untuk kembali ke menu utama."
+    );
+    state[message.from] = null;
+    return;
     }
 
     if (message.body === '2') {
