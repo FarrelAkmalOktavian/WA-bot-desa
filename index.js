@@ -46,14 +46,18 @@ client.on('message', message => {
         message.reply(
             "📄 *Informasi Layanan Administrasi Desa*\n\n" +
             "Berikut layanan yang tersedia:\n" +
-            "1️⃣1️⃣ Surat Domisili\n" +
-            "1️⃣2️⃣ Surat Keterangan Usaha\n" +
-            "1️⃣3️⃣ Surat Kematian\n" +
-            "1️⃣4️⃣ Surat Beda Nama\n" +
-            "1️⃣5️⃣ Surat Pengantar Nikah\n" +
-            "1️⃣6️⃣ Pembuatan/Perubahan KK\n" +
-            "1️⃣7️⃣ Pengajuan Perpindahan Antar Kabupaten/Provinsi\n" +
-            "1️⃣8️⃣ Pengajuan dari Luar Kabupaten Masuk ke Kabupaten Klaten\n" +
+            "*1.1* Surat Domisili\n" +
+            "*1.2* Surat Keterangan Usaha\n" +
+            "*1.3* Surat Kematian\n" +
+            "*1.4* Surat Beda Nama\n" +
+            "*1.5* Surat Pengantar Nikah\n" +
+            "*1.6* Pembuatan/Perubahan KK\n" +
+            "*1.7* Pengajuan KTP-EL\n" +
+            "*1.8* Pengajuan KIA\n" +
+            "*1.9* Pengajuan Akta Kelahiran\n" +
+            "*1.10* Pengajuan Akta Kematian\n" +
+            "*1.11* Pengajuan Perpindahan Antar Kabupaten/Provinsi\n" +
+            "*1.12* Pengajuan Kedatangan dari Luar Kabupaten Masuk ke Kabupaten Klaten\n" +
             "Ketik angka sesuai pilihan Anda seperti conotoh: *11*\n" +
             "(Surat Keterangan Lain Bisa Langsung Datang ke Balai Desa.)\n" +
             "🕒 Jam Pelayanan: Senin–Kamis (08.00–13.00), Jum'at (08.00-11.00)\n\n" +
@@ -131,7 +135,7 @@ client.on('message', message => {
 
     if (state[message.from] === "menu1" && message.body === '17') {
     message.reply(
-        "📌 *Persyaratan Pengajuan Perpindahan Antar Kabupate atau Provinsi:*\n\n" +
+        "📌 *Persyaratan Pengajuan Perpindahan Antar Kabupaten atau Provinsi:*\n\n" +
         "• Surat Layu-Layu atau Keterangan Tanggal Kematian\n" +
         "• KK yang Meninggal\n" +
         "• KTP Pelapor\n\n" +
@@ -143,7 +147,7 @@ client.on('message', message => {
 
     if (state[message.from] === "menu1" && message.body === '18') {
     message.reply(
-        "📌 *Persyaratan Pengajuan dari Luar Kabupaten Masuk ke Kabupaten Klaten:*\n\n" +
+        "📌 *Persyaratan Pengajuan Kedatangan dari Luar Kabupaten Masuk ke Kabupaten Klaten:*\n\n" +
         "• Surat Layu-Layu atau Keterangan Tanggal Kematian\n" +
         "• KK yang Meninggal\n" +
         "• KTP Pelapor\n\n" +
