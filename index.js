@@ -41,7 +41,6 @@ client.on('message', message => {
     return;
     }
 
-
     if (message.body === '1') {
         message.reply(
             "📄 *Informasi Layanan Administrasi Desa*\n\n" +
@@ -58,7 +57,7 @@ client.on('message', message => {
             "*1.10* Pengajuan Akta Kematian\n" +
             "*1.11* Pengajuan Perpindahan Antar Kabupaten/Provinsi\n" +
             "*1.12* Pengajuan Kedatangan dari Luar Kabupaten Masuk ke Kabupaten Klaten\n" +
-            "Ketik angka sesuai pilihan Anda seperti conotoh: *11*\n" +
+            "Ketik angka sesuai pilihan Anda seperti conotoh: *1.1*\n" +
             "(Surat Keterangan Lain Bisa Langsung Datang ke Balai Desa.)\n" +
             "🕒 Jam Pelayanan: Senin–Kamis (08.00–13.00), Jum'at (08.00-11.00)\n\n" +
             "👉 Ketik *menu* untuk kembali ke menu utama."
@@ -124,9 +123,15 @@ client.on('message', message => {
     if (state[message.from] === "menu1" && message.body === '1.6') {
     message.reply(
         "📌 *Persyaratan Pembuatan atau Perubahan KK:*\n\n" +
-        "• Surat Layu-Layu atau Keterangan Tanggal Kematian\n" +
-        "• KK yang Meninggal\n" +
-        "• KTP Pelapor\n\n" +
+        "• Kartu keluarga\n" +
+        "• Dokumen Pendukung (Akta Kelahiran/Buku Nikah/Akta Cerai/Akta Kematian/Ijazah dll)\n" +
+        "• Surat Keterangan Kehilangan dari Kepolisian (jika KK hilang)\n" +
+        "• Mengisi formulir F-1.01 untuk permohonan KK baru\n" +
+        "• Mengisi formulir F-1.06 untuk permohonan perubahan elemen data\n" +
+        "• Mengisi formulir F-1.03 untuk permohonan perpindahan antar Desa/Kelurahan/Kecamatan\n" +
+        "• KTP Elektronik\n" +
+        "• Mengisi SPTJM (Surat Pernyataan Tanggung Jawab Mutlak) perkawinan/perceraian belum tercatat (F-1.05), jika tidak dapat melampirkan kutipan akta perkawinan atau perceraian\n" +
+        "• Surat pernyataan bersedia menerima sebagai anggota keluarga dan surat kuasa pengasuhan anak dari orang tua/wali untuk permohonan numpang KK bagi anak usia di bawah 17 tahun\n\n" +
         "👉 Ketik *menu* untuk kembali ke menu utama."
     );
     state[message.from] = null;
@@ -148,9 +153,11 @@ client.on('message', message => {
     if (state[message.from] === "menu1" && message.body === '1.8') {
     message.reply(
         "📌 *Persyaratan Pengajuan KIA:*\n\n" +
-        "• Surat Layu-Layu atau Keterangan Tanggal Kematian\n" +
-        "• KK yang Meninggal\n" +
-        "• KTP Pelapor\n\n" +
+        "• Kartu keluarga\n" +
+        "• Akta Kelahiran\n" +
+        "• Pas foto berwarna ukuran 4x6 bagi anak usia di atas 5 tahun\n" +
+        "• KIA Asli yang sudah dipotong pada bagian tanda tangan (untuk ajuan KIA Rusak/Perubahan Elemen Data)\n" +
+        "• Surat Kehilangan dari Kepolisian (untuk ajuan KIA hilang)\n\n" +
         "👉 Ketik *menu* untuk kembali ke menu utama."
     );
     state[message.from] = null;
@@ -160,9 +167,10 @@ client.on('message', message => {
     if (state[message.from] === "menu1" && message.body === '1.9') {
     message.reply(
         "📌 *Persyaratan Pengajuan Akta Kelahiran:*\n\n" +
-        "• Surat Layu-Layu atau Keterangan Tanggal Kematian\n" +
-        "• KK yang Meninggal\n" +
-        "• KTP Pelapor\n\n" +
+        "• Surat Keterangan Kelahiran dari Rumah Sakit/Dokter/Bidan Penolong\n" +
+        "• Kartu Keluarga\n" +
+        "• Buku Nikah/Akta Perkawinan Orang Tua (lengkap dengan tanda tangan pejabat yang berwenang)\n" +
+        "• Mengisi formulir F-2.01 (Formulir Pelaporan Pencatatan Sipil Di Dalam Wilayah NKRI)\n\n" +
         "👉 Ketik *menu* untuk kembali ke menu utama."
     );
     state[message.from] = null;
@@ -172,9 +180,9 @@ client.on('message', message => {
     if (state[message.from] === "menu1" && message.body === '1.10') {
     message.reply(
         "📌 *Persyaratan Pengajuan Akta Kematian:*\n\n" +
-        "• Surat Layu-Layu atau Keterangan Tanggal Kematian\n" +
-        "• KK yang Meninggal\n" +
-        "• KTP Pelapor\n\n" +
+        "• Surat Keterangan Kematian dari Rumah Sakit/Dokter/Desa/Kelurahan\n" +
+        "• KTP-el jenazah atau KK yang tertera NIK jenazah\n" +
+        "• Mengisi formulir F-2.01 (Formulir Pelaporan Pencatatan Sipil Di Dalam Wilayah NKRI)\n\n" +
         "👉 Ketik *menu* untuk kembali ke menu utama."
     );
     state[message.from] = null;
@@ -184,9 +192,11 @@ client.on('message', message => {
     if (state[message.from] === "menu1" && message.body === '1.11') {
     message.reply(
         "📌 *Persyaratan Pengajuan Perpindahan Antar Kabupaten atau Provinsi:*\n\n" +
-        "• Surat Layu-Layu atau Keterangan Tanggal Kematian\n" +
-        "• KK yang Meninggal\n" +
-        "• KTP Pelapor\n\n" +
+        "• Kartu Keluarga\n" +
+        "• KTP Elektronik\n" +
+        "• Surat Nikah bagi yang sudah menikah, Akta Cerai bagi yang Cerai Hidup, Akta Kematian pasangan bagi yang Cerai Mati\n" +
+        "• Akta Kelahiran\n" +
+        "• Mengisi formulir F-1.03 (formulir Pendaftaran Perpindahan Penduduk)\n\n" +
         "👉 Ketik *menu* untuk kembali ke menu utama."
     );
     state[message.from] = null;
@@ -196,9 +206,12 @@ client.on('message', message => {
     if (state[message.from] === "menu1" && message.body === '1.12') {
     message.reply(
         "📌 *Persyaratan Pengajuan Kedatangan dari Luar Kabupaten Masuk ke Kabupaten Klaten:*\n\n" +
-        "• Surat Layu-Layu atau Keterangan Tanggal Kematian\n" +
-        "• KK yang Meninggal\n" +
-        "• KTP Pelapor\n\n" +
+        "• Surat Keterangan Pindah Warga Negara Indonesia (SKPWNI) dari Kabupaten/Kota Asal\n" +
+        "• Dokumen pendukung (Akta Kelahiran/Buku nikah/Akta Cerai/Akta Kematian/Ijazah dll)\n" +
+        "• KK yang ditumpangi bila Pendatang Numpang KK\n" +
+        "• Mengisi Formulir F-1.01 (Formulir Biodata Penduduk WNI)\n" +
+        "• Pasfoto berwarna ukuran 4x6 bagi anak usia 6 s/d 16 tahun (untuk pencetakan KIA)\n" +
+        "• Surat pernyataan bersedia menerima sebagai anggota keluarga dan Surat kuasa pengasuhan anak dari orang tua/wali untuk permohonan numpang KK bagi anak usia di bawah  17 tahun\n\n" +
         "👉 Ketik *menu* untuk kembali ke menu utama."
     );
     state[message.from] = null;
@@ -242,12 +255,13 @@ client.on('message', message => {
     if (message.body === '5') {
         message.reply(
             "☎️ *Kontak Perangkat Desa*\n\n" +
-            "Kepala Desa: 0815-6789-3810\n" +
-            "Kasi Pemerintahan: 0882-2753-9296\n" +
-            "Kaur Keuangan: 0881-3980-121\n" +
-            "Kepala Dusun 1: 0856-0102-2821\n" +
-            "Kepala Dusun 2: 0816-4246-049\n" +
-            "Kepala Dusun 3: 0881-0242-41498\n\n" +
+            "Kepala Desa: 0815-6789-3810 (Pak Surata)\n" +
+            "Sekretaris Desa: 0815-6789-4329 (Pak Ari)\n" +
+            "Kasi Pemerintahan: 0882-2753-9296 (Bu Ayu)\n" +
+            "Kaur Keuangan: 0881-3980-121 (Bu Dwi)\n" +
+            "Kepala Dusun 1: 0856-0102-2821 (Pak Isa)\n" +
+            "Kepala Dusun 2: 0816-4246-049 (Bu Ning)\n" +
+            "Kepala Dusun 3: 0881-0242-41498 (Pak Paryono\n\n" +
             "👉 Ketik *menu* untuk kembali ke menu utama."
         );
         return;
@@ -285,11 +299,10 @@ client.on('message', message => {
         return;
     }
 
-
     if (message.body === '7') {
         message.reply(
             "🔗 *Website Desa Burikan*\n\n" +
-            "Untuk menuju ke website Desa Burikan, silahkan akses melalui tautan dibawah\n" +
+            "Untuk menuju ke website Desa Burikan, silahkan akses melalui tautan dibawah\n" +   
             "⬇️⬇️⬇️\n\n" +
             "https://burikan.cawas.klaten.go.id/\n\n" +
             "👉 Ketik *menu* untuk kembali ke menu utama."
