@@ -3,9 +3,6 @@ const qrcode = require('qrcode-terminal');
 
 const client = new Client();
 
-const input = message.body.trim().toLowerCase();
-
-
 function salamOtomatis() {
     const jam = new Date().getHours();
 
@@ -26,7 +23,7 @@ client.on('ready', () => {
 let state = {};
 
 client.on('message', message => {
-    if (input === 'menu') {
+    if (message.body.toLowerCase() === 'menu') {
     state[message.from] = "menu1";
     const salam = salamOtomatis();
     message.reply(
@@ -44,7 +41,7 @@ client.on('message', message => {
     return;
     }
 
-    if (input === '1') {
+    if (message.body === '1') {
         message.reply(
             "📄 *Informasi Layanan Administrasi Desa*\n\n" +
             "Berikut layanan yang tersedia:\n" +
@@ -68,7 +65,7 @@ client.on('message', message => {
     }
 
     //terusan dari Layanan Administrasi Desa
-    if (state[message.from] === "menu1" && input === '1.1') {
+    if (state[message.from] === "menu1" && message.body === '1.1') {
     message.reply(
         "📌 *Persyaratan Surat Domisili:*\n\n" +
         "• KK atau KTP Pemohon\n" +
@@ -79,7 +76,7 @@ client.on('message', message => {
     return;
     }
 
-    if (state[message.from] === "menu1" && input === '1.2') {
+    if (state[message.from] === "menu1" && message.body === '1.2') {
     message.reply(
         "📌 *Persyaratan Surat Keterangan Usaha:*\n\n" +
         "• KK atau KTP Pemohon\n" +
@@ -91,7 +88,7 @@ client.on('message', message => {
     return;
     }
 
-    if (state[message.from] === "menu1" && input === '1.3') {
+    if (state[message.from] === "menu1" && message.body === '1.3') {
     message.reply(
         "📌 *Persyaratan Surat Kematian:*\n\n" +
         "• Surat Layu-Layu atau Keterangan Tanggal Kematian\n" +
@@ -103,7 +100,7 @@ client.on('message', message => {
     return;
     }
 
-    if (state[message.from] === "menu1" && input === '1.4') {
+    if (state[message.from] === "menu1" && message.body === '1.4') {
     message.reply(
         "📌 *Persyaratan Surat Pengantar Nikah:*\n\n" +
         "• Menghubungi Bu Dwi (0881-3980-121)\n\n" +
@@ -113,7 +110,7 @@ client.on('message', message => {
     return;
     }
 
-    if (state[message.from] === "menu1" && input === '1.5') {
+    if (state[message.from] === "menu1" && message.body === '1.5') {
     message.reply(
         "📌 *Persyaratan Surat Beda Nama:*\n\n" +
         "• Dokumen yang Namanya Berbeda yang Dilaporkan\n\n" +
@@ -123,7 +120,7 @@ client.on('message', message => {
     return;
     }
 
-    if (state[message.from] === "menu1" && input === '1.6') {
+    if (state[message.from] === "menu1" && message.body === '1.6') {
     message.reply(
         "📌 *Persyaratan Pembuatan atau Perubahan KK:*\n\n" +
         "• Kartu keluarga\n" +
@@ -141,7 +138,7 @@ client.on('message', message => {
     return;
     }
 
-    if (state[message.from] === "menu1" && input === '1.7') {
+    if (state[message.from] === "menu1" && message.body === '1.7') {
     message.reply(
         "📌 *Persyaratan Pengajuan KTP-EL:*\n\n" +
         "• Surat Layu-Layu atau Keterangan Tanggal Kematian\n" +
@@ -153,7 +150,7 @@ client.on('message', message => {
     return;
     }
 
-    if (state[message.from] === "menu1" && input === '1.8') {
+    if (state[message.from] === "menu1" && message.body === '1.8') {
     message.reply(
         "📌 *Persyaratan Pengajuan KIA:*\n\n" +
         "• Kartu keluarga\n" +
@@ -167,7 +164,7 @@ client.on('message', message => {
     return;
     }
 
-    if (state[message.from] === "menu1" && input === '1.9') {
+    if (state[message.from] === "menu1" && message.body === '1.9') {
     message.reply(
         "📌 *Persyaratan Pengajuan Akta Kelahiran:*\n\n" +
         "• Surat Keterangan Kelahiran dari Rumah Sakit/Dokter/Bidan Penolong\n" +
@@ -180,7 +177,7 @@ client.on('message', message => {
     return;
     }
 
-    if (state[message.from] === "menu1" && input === '1.10') {
+    if (state[message.from] === "menu1" && message.body === '1.10') {
     message.reply(
         "📌 *Persyaratan Pengajuan Akta Kematian:*\n\n" +
         "• Surat Keterangan Kematian dari Rumah Sakit/Dokter/Desa/Kelurahan\n" +
@@ -192,7 +189,7 @@ client.on('message', message => {
     return;
     }
 
-    if (state[message.from] === "menu1" && input === '1.11') {
+    if (state[message.from] === "menu1" && message.body === '1.11') {
     message.reply(
         "📌 *Persyaratan Pengajuan Perpindahan Antar Kabupaten atau Provinsi:*\n\n" +
         "• Kartu Keluarga\n" +
@@ -206,7 +203,7 @@ client.on('message', message => {
     return;
     }
 
-    if (state[message.from] === "menu1" && input === '1.12') {
+    if (state[message.from] === "menu1" && message.body === '1.12') {
     message.reply(
         "📌 *Persyaratan Pengajuan Kedatangan dari Luar Kabupaten Masuk ke Kabupaten Klaten:*\n\n" +
         "• Surat Keterangan Pindah Warga Negara Indonesia (SKPWNI) dari Kabupaten/Kota Asal\n" +
@@ -221,7 +218,7 @@ client.on('message', message => {
     return;
     }
 
-    if (input === '2') {
+    if (message.body === '2') {
         message.reply(
             "🗓️ *Jadwal Pelayanan Desa Burikan*\n" +
             "- Administrasi: Senin–Jumat (08.00–13.00), Jum'at (08.00-11.00)\n" +
@@ -231,7 +228,7 @@ client.on('message', message => {
         );
     }
 
-    if (input === '3') {
+    if (message.body === '3') {
         message.reply(
             "💰 *Informasi Bantuan & Program Sosial*\n\n" +
             "Dana bantuan BLT tersedia setiap bulan untuk masyarakat miskin ekstrim\n\n" +
@@ -240,7 +237,7 @@ client.on('message', message => {
         return;
     }
 
-    if (input === '4') {
+    if (message.body === '4') {
         message.reply(
             "🏢 *Susunan Organisasi dan Tata Kerja Desa Burikan*\n\n" +
             "Kepala Desa: Surata\n" +
@@ -255,7 +252,7 @@ client.on('message', message => {
         return;
     }
 
-    if (input === '5') {
+    if (message.body === '5') {
         message.reply(
             "☎️ *Kontak Perangkat Desa*\n\n" +
             "Kepala Desa: 0815-6789-3810 (Pak Surata)\n" +
@@ -270,7 +267,7 @@ client.on('message', message => {
         return;
     }
 
-        if (input === '6') {
+        if (message.body === '6') {
         message.reply(
             "🏡 *Tentang Desa Burikan*\n\n" +
             "Desa Burikan merupakan salah satu desa yang berada di Kecamatan Cawas, Kabupaten Klaten, Jawa Tengah. Desa ini dikenal dengan suasana pedesaan yang asri, lingkungan yang masih alami, serta kehidupan sosial masyarakat yang harmonis. Hamparan sawah hijau yang luas, aliran irigasi yang tertata, dan pemandangan pegunungan di kejauhan menjadikan Desa Burikan memiliki potensi alam yang memukau dan khas pedesaan Jawa.\n\n" +
@@ -302,7 +299,7 @@ client.on('message', message => {
         return;
     }
 
-    if (input === '7') {
+    if (message.body === '7') {
         message.reply(
             "🔗 *Website Desa Burikan*\n\n" +
             "Untuk menuju ke website Desa Burikan, silahkan akses melalui tautan dibawah\n" +   
@@ -313,7 +310,7 @@ client.on('message', message => {
         return;
     }
 
-    if (!['1','2','3','4','5','6','7'].includes(input)) {
+    if (!['1','2','3','4','5','6','7'].includes(message.body)) {
         message.reply(
             "❗ *Maaf, pilihan tidak valid.*\n" +
             "Silakan ketik angka sesuai pilihan atau ketik *menu* untuk melihat daftar pilihan."
