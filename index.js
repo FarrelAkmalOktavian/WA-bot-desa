@@ -3,6 +3,16 @@ const qrcode = require('qrcode-terminal');
 
 const client = new Client();
 
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+  res.send('Bot Desa Burikan aktif ✅');
+});
+
+app.listen(PORT, () => console.log(`🌐 Server berjalan di port ${PORT}`));
+
 function salamOtomatis() {
     const jam = new Date().getHours();
 
