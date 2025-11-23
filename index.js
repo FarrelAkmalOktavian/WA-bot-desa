@@ -7,11 +7,33 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-  res.send('Bot Desa Burikan aktif ✅');
+app.head('/', (req, res) => {
+  res.status(200).end();
 });
 
 app.listen(PORT, () => console.log(`🌐 Server berjalan di port ${PORT}`));
+
+// ===== SELF-PING ULTRA HEMAT =====
+const https = require('https');
+
+function selfPingUltraHemat() {
+  const now = Date.now();
+  const diffMinutes = (now - lastMessageTime) / 1000 / 60;
+
+  // Hanya ping kalau 10 menit tidak ada pesan
+  if (diffMinutes >= 10) {
+    https.get(`https://${process.env.REPL_SLUG}.${process.env.REPL_OWNER}.repl.co`, () => {
+      console.log("🔁 Self-ping dilakukan (bot sedang idle >10 menit)");
+    }).on('error', () => {
+      console.log("⚠️ Self-ping gagal");
+    });
+  } else {
+    console.log(`⏳ Bot baru menerima pesan ${Math.floor(diffMinutes)} menit lalu — belum perlu self-ping`);
+  }
+}
+
+// Jalankan setiap 5 menit
+setInterval(selfPingUltraHemat, 5 * 60 * 1000);
 
 function salamOtomatis() {
     const jam = new Date().getHours();
@@ -32,7 +54,11 @@ client.on('ready', () => {
 
 let state = {};
 
+let lastMessageTime = Date.now();
+
 client.on('message', message => {
+    lastMessageTime = Date.now();
+
     if (message.body.toLowerCase() === 'menu') {
     state[message.from] = "menu1";
     const salam = salamOtomatis();
